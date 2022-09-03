@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>건강 자가진단</title>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'test_page.css')}}">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <!--header -->
+        <header>
+            <h1 class="Logo"><a href="http://127.0.0.1:5000"><img src="{{url_for('static', filename = './img/it로고.png')}}" alt=""></a></h1>
+            <nav>
+                <ul class="head-btn">
+                    <li class="middle-menu"><a href="#news">회사소개</a></li>
+                    <li class="middle-menu"><a href="{{url_for('test')}}">건강자가진단</a></li>
+                    <li class="middle-menu"><a href="#news">건강뉴스</a></li>
+                </ul>
+            </nav>
+            <ul>
+                <li class="right-menu"><img src="{{url_for('static', filename = './img/검색아이콘.png')}}"></li>
+            </ul>
+        </header>
+        <!--main -->
+        <main id="main">
+            <!--menu button-->
+            <div class="main-header">
+                <h1>무료 건강자가진단</h1>
+                    <div class="trademark">
+                        iT MachineLearning Predict
+                        <sup>®</sup>
+                    </div>
+            </div>
+            <!--3가지 그림-->
+            <article class="test-img">
+                <!--테스트페이지 배경 3색-->
+                <section class="test-page-top">
+                    <section class="test-page-bottom"></section>
+                </section>
+                <div class="clock">
+                    <img src="https://static.neris-assets.com/images/test-header-1.svg">
+                    <div class="img-txt"><span>총 검사 시간은 2분<br>내외입니다.</span></div>
+                </div>
+                <div class="conscience">
+                    <img src="https://static.neris-assets.com/images/test-header-2.svg">
+                    <div class="img-txt"><span>최대한 정확하게<br>답변하십시오.</span></div>
+                </div>
+                <div class="not-mid">
+                    <img src="https://static.neris-assets.com/images/test-header-3.svg">
+                    <div class="img-txt"><span>사용자의 개인정보를 임의로<br>사용하지 않습니다.</span></div>
+                </div>
+            </article>
+            <br class="clearfix">
+            <!--경계선-->
+            <div id="borderline"></div>
+            <!--자가진단 질문-->
+            <article class="test-content">
+                <section>
+                    <form autocomplete="on" method="post" action="{{url_for('result')}}" id="form-file">
+                        <div></div>
+                        <div class="taller" id="test-div">
+                            <h2>키</h2>
+                            <input type="number" class="test-input" name="taller" placeholder="키" maxlength="3" min="61" max="220" required style="padding: 15px 80px 15px;" id="taller">
+                            <span style="font-size: 24px; font-weight: bold;">cm</span>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="weight" id="test-div">
+                            <h2>몸무게</h2>
+                            <input type="number" class="test-input" name="weight" placeholder="몸무게" maxlength="3" required min="30" max="500" required style="padding: 15px 80px 15px;" id="weight">
+                            <span style="font-size: 24px; font-weight: bold;">kg</span>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="age" id="test-div">
+                            <h2>나이</h2>
+                            <input type="number" class="test-input" name="age" placeholder="나이" maxlength="3" required min="19" max="130" required style="padding: 15px 80px 15px;" id="age">
+                        </div>
+                    </section>
+                    <section class="section-sex">
+                        <div class="sex" id="test-div">
+                            <div>
+                                <h2>성별</h2>
+                                <div class="input__radio">
+                                    <input type="radio" name="sex" id="male" value="1" class="radiogroup">
+                                    <label for="male" class="yes">
+                                        <span>남성</span>
+                                    </label>
+                                    <input type="radio" name="sex" id="female" value="0" class="radiogroup">
+                                    <label for="female">
+                                        <span>여성</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="sleeptime" id="test-div">
+                            <h2>평균수면시간</h2>
+                            <select name="sleeptime" class="test-input" id="selector" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option selected value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
+                        <section>
+                            <div>
+                                <div class="smoking" id="test-div">
+                                    <h2>현재 흡연을 하거나 하신적이 있나요?</h2>
+                                    <h4>(100개비 초과 기준)</h4>
+                                    <div class="input__radio">
+                                        <input type="radio" name="smoking" id="smoking_yes" class="radiogroup" value="1">
+                                        <label for="smoking_yes" class="yes">
+                                            <span>예</span>
+                                        </label>
+                                        <input type="radio" name="smoking" id="smoking_no" class="radiogroup" value="0"> 
+                                        <label for="smoking_no">
+                                            <span>아니오</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <div class="alchole" id="test-div">
+                                    <h2>음주를 할 때 과음을 하나요?</h2>
+                                    <h4>(남자는 14잔 이상, 여자는 7잔이상)</h4>
+                                    <div class="input__radio">
+                                        <input type="radio" name="alchole" id="alchole_yes" class="radiogroup" value="1">
+                                        <label for="alchole_yes" class="yes">
+                                            <span>예</span>
+                                        </label>
+                                        <input type="radio" name="alchole" id="alchole_no" class="radiogroup" value="0">
+                                        <label for="alchole_no">
+                                            <span>아니오</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                            <div>
+                                <div class="physicalactivity" id="test-div">
+                                    <h2>한 달 동안 정규업무외에 운동을 한 적이 있나요?</h2>
+                                    <div class="input__radio">
+                                        <input type="radio" name="physicalactivity" id="physicalactivity_yes" class="radiogroup" value="0">
+                                        <label for="physicalactivity_yes" class="yes">
+                                            <span>예</span>
+                                        </label>
+                                        <input type="radio" name="physicalactivity" id="physicalactivity_no" class="radiogroup" value="1">
+                                        <label for="physicalactivity_no">
+                                            <span>아니오</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        <div>
+                            <div class="diffwalking" id="test-div">
+                                <h2>걷거나 계단을 오를 때 힘드시나요?</h2>
+                                <div class="input__radio">
+                                    <input type="radio" name="diffwalking" id="diffwalking_yes" class="radiogroup" value="1">
+                                    <label for="diffwalking_yes" class="yes">
+                                        <span>예</span>
+                                    </label>
+                                    <input type="radio" name="diffwalking" id="diffwalking_no" class="radiogroup" value="0">
+                                    <label for="diffwalking_no">
+                                        <span>아니오</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="heartdisease" id="test-div">
+                                <h2>현재 관상동맥 심장질환 또는 심근경색증을 앓고 있는 중인가요?</h2>
+                                <div class="input__radio">
+                                    <input type="radio" name="heartdisease" id="heartdisease_yes" class="radiogroup" value="1">
+                                    <label for="heartdisease_yes" class="yes">
+                                        <span>예</span>
+                                    </label>
+                                    <input type="radio" name="heartdisease" id="heartdisease_no" class="radiogroup" value="0">
+                                    <label for="heartdisease_no">
+                                        <span>아니오</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="Asthma" id="test-div">
+                                <h2>현재 천식이 있나요?</h2>
+                                <div class="input__radio">
+                                    <input type="radio" name="Asthma" id="Asthma_yes" class="radiogroup" value="1">
+                                    <label for="Asthma_yes" class="yes">
+                                        <span>예</span>
+                                    </label>
+                                    <input type="radio" name="Asthma" id="Asthma_no" class="radiogroup" value="0">
+                                    <label for="Asthma_no">
+                                        <span>아니오</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="kidneydisease" id="test-div">
+                                <h2>현재 앓고있는 신장질환이 있나요?</h2>
+                                <h4>(신장결석, 방광감염, 요실금은 제외)</h4>
+                                <div class="input__radio">
+                                    <input type="radio" name="kidneydisease" id="kidneydisease_yes" class="radiogroup" value="1"> 
+                                    <label for="kidneydisease_yes" class="yes">
+                                        <span>예</span>
+                                    </label>
+                                    <input type="radio" name="kidneydisease" id="kidneydisease_no" class="radiogroup" value="0">
+                                    <label for="kidneydisease_no">
+                                        <span>아니오</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="stroke" id="test-div">
+                                <h2>과거에 뇌졸중이 있었거나 현재 앓는 중인가요?</h2>
+                                <div class="input__radio">
+                                    <input type="radio" name="stroke" id="stroke_yes" class="radiogroup" value="1">
+                                    <label for="stroke_yes" class="yes">
+                                        <span>예</span>
+                                    </label>
+                                    <input type="radio" name="stroke" id="stroke_no" class="radiogroup" value="0">
+                                    <label for="stroke_no">
+                                        <span>아니오</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="diebtic" id="test-div">
+                                <h2>현재 당뇨병을 앓는 중인가요?</h2>
+                                <div class="input__radio">
+                                    <input type="radio" name="diebtic" id="diebtic_yes" class="radiogroup" value="1">
+                                    <label for="diebtic_yes" class="yes">
+                                        <span>예</span>
+                                    </label>
+                                    <input type="radio" name="diebtic" id="diebtic_no" class="radiogroup" value="0">
+                                    <label for="diebtic_no">
+                                        <span>아니오</span>
+                                    </label>
+                                </div>
+                                </div>
+                            </div>
+                        <input type="submit" name="next-button" class="next-button" value="결과 확인">
+                    </form>
+                </section>
+            </article>
+        </main>
+        <!--clearfix-->
+        <div class="clearfix"></div>
+        <!--footer -->
+        <footer id="footer">
+            <div class="copyright">
+                <p>Copyright 2022 iT inc. All rights reserved. </p>
+            </div>
+            <div class="address">
+                <p>광주광역시 동구 제봉로 92 3층 Classroom10 Cloud_B반 </p>
+            </div>
+        </footer>
+        </div>
+    </div>
+    <!--JS-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="{{url_for('static', filename = 'test_page.css')}}"></script>
+    </body>
+</html>

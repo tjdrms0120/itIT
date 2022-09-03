@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>삶과 건강을 it다.</title>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'homepage.css')}}">
+    </head>
+    <!--body-->
+    <body>
+    <div class="container">
+        <!--header-->
+        <header>
+            <h1 class="Logo"><a href="{{url_for('main')}}"><img src="{{url_for('static', filename = './img/it로고.png')}}" alt=""></a></h1>
+            <nav>
+                <ul class="head-btn">
+                    <li class="middle-menu"><a href="#news">회사소개</a></li>
+                    <li class="middle-menu"><a href="{{url_for('test')}}">건강자가진단</a></li>
+                    <li class="middle-menu"><a href="https://www.kdca.go.kr/index.es?sid=a2">건강뉴스</a></li>
+                </ul>
+            </nav>
+            <ul>
+                <li class="right-menu"><img src="{{url_for('static', filename = './img/검색아이콘.png')}}"></li>
+            </ul>
+        </header>
+            <!--home page-->
+            <main class="main">
+                <article class="introduce">
+                    <section class="middle">
+                            <span class="left-top">당신의 삶에</span>
+                            <img src="{{url_for('static', filename = './img/shoose.jpg')}}" class="left-bottom">
+                            <img src="{{url_for('static', filename = './img/young_woman.jpg')}}" class="middle-top">
+                            <div class="middle-bottom">
+                                <span>행복한 일만</span><br>
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가득하길</span class="bottom-txt">
+                            </div>
+                            <img src="{{url_for('static', filename = './img/family.jpg')}}" class="right-top">
+                            <img src="{{url_for('static', filename = './img/노부부.jpg')}}" class="right-bottom">
+                    </section>
+                </article>
+                <div>
+                    <a href="{{url_for('test')}}"><button class="test-button">나의 건강상태 확인하기</button></a>
+                </div>
+            </main>
+        <footer id="footer">
+            <div class="copyright">
+                <p>Copyright 2022 iT inc. All rights reserved. </p>
+            </div>
+            <div class="address">
+                <p>광주광역시 동구 제봉로 92 3층 Classroom10 Cloud_B반 </p>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="{{url_for('static', filename = 'homepage.js')}}"></script>
+        </body>
+    </html>

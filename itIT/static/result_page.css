@@ -1,0 +1,477 @@
+@font-face {
+    font-family: 'MYHaemalgeunSangsang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYHaemalgeunSangsang.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EF_WAKEUP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_WAKEUP.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EF_YOONY';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_YOONY.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/***************
+**** Default****
+***************/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+img {
+    vertical-align: middle;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    background-color: #f9f8e7;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/************
+****Header***
+************/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    background-color : #313132;
+    padding: 10px 20px;
+}
+
+header h1 {
+    float: left;
+}
+
+header nav {
+    float: right;
+}
+
+header ul li {
+    display: inline-block;
+    margin-inline: 32px;
+    align-items: center;
+}
+
+header .head-btn a {
+    font-size: 22px;
+}
+
+header nav {
+    align-items: center;
+    margin : 0 auto;
+}
+
+.middle-menu {
+    transition: all 0.7s;
+}
+
+.middle-menu:focus {
+    outline: none;
+}
+
+.middle-menu:hover {
+    background-color: #525253;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+header .right-menu {
+    align-items: right;
+}
+
+header ul li:last-child {
+    margin-inline: 30px;
+}
+
+header ul li a {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+header img{
+    width: 60px;
+    padding-top: 5px;
+    transition: all 0.4s;
+}
+
+header img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.middle-menu a {
+    color:rgb(204, 204, 204);
+    transition: all 0.5s
+}
+
+.middle-menu a:hover {
+    color: #ffffff;
+}
+
+/*********
+**footer**
+*********/
+#footer {
+    align-self: bottom;
+    position: absolute;
+    display: block;
+    align-items: bottom;
+    width: 100%;
+    height: 80px;
+    background-color : #f9f9f9;
+}
+
+#footer .copyright {
+    float: left;
+    width: 50%;
+}
+
+#footer .address {
+    float: right;
+    width: 50%; 
+}
+
+#footer .copyright p {
+    font-size: 14px;
+    color: #999;
+    padding : 32px 0 0 40px;
+}
+
+#footer .address p {
+    text-align: right;
+    font-size: 14px;
+    color: #999;
+    padding: 32px 40px 0 0;
+}
+
+/***************
+***modal-site***
+***************/
+
+.modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    /* display: none; */
+}
+
+.modal-content {
+    margin: 1px;
+    background-color: #fff;
+    width: 1000px;
+    height: 85%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-close {
+    position: absolute;
+    color: gray;
+    font-weight: bold;
+    font-size: 18px;
+    top: 10px;
+    right: 20px;
+}
+
+.btn-close:hover {
+    transform: scale(1.2);
+}
+
+/*****************
+**modal-content***
+*****************/
+.header-text {
+    justify-items: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main {
+    margin-top:10px;
+    justify-content: space-around;
+    display: flex;
+}
+.main-content {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.main-content .face {
+    border-radius : 20px;
+    width: 470px;
+    height: 280px;
+    padding-left: 10px;
+}
+
+.main-health {
+    display: flex;
+    width: 50%;
+    height: 320px;
+    justify-items: space-between;
+    flex-direction: column;
+}
+
+.main-health #section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 7px 0 0 20px;
+    width: 165px;
+    border-radius: 10px;
+    height: 16%;
+}
+
+.main-health #section h2 {
+    margin: 8px 0 0 30px;
+    font-family: 'EF_YOONY';
+}
+
+.HeartDisease {
+    animation: di_gage 1s forwards;
+}
+
+.Stroke {
+    animation: di_gage 1.3s forwards;
+}
+
+.Diabetic {
+    animation: di_gage 1.6s forwards;
+}
+
+.Asthma {
+    animation: di_gage 1.9s forwards;
+}
+
+.KidneyDisease {
+    animation: di_gage 2.2s forwards;
+}
+
+@keyframes di_gage{
+    from {
+        width: 165px;
+    }
+    
+    to {
+        width: 420px;
+    }
+}
+
+.recommendation {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 320px;
+}
+
+.recommendation .physical {
+    display: flex;
+    justify-content: space-around;
+    width: 48%;
+    height: 280px;
+    margin: 1% auto;
+}
+
+.recommendation .food {
+    display: flex;
+    justify-content: space-around;
+    width: 48%;
+    height: 280px;
+    margin: 1% auto;
+}
+
+
+.recommendation .footer-left {
+    width: 48%;
+    height: 260px;
+    text-align: center;
+    font-family: 'EarlyFontDiary';
+    font-weight: bold;
+}
+
+.recommendation .footer-left .rec-img img {
+    margin-top: 10px;
+    width: 180px;
+    height: 240px;
+    border-radius: 10px;
+}
+
+.recommendation .footer-left .rec-txt {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.recommendation .footer-right ol {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.recommendation .footer-right ol li {
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+.recommendation .footer-right {
+    display: flex;
+    justify-items: space-around; 
+    width: 55%;
+    height: 260px;
+    font-family: 'EarlyFontDiary';
+    font-weight: bold;
+}
+
+
+/************
+**homepage***
+************/
+
+main {
+    margin: 0;
+    padding: 0;
+    height: 140vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introduce {
+    margin-top: 100px;
+    width: 100%;
+    height: 1550px;
+    /* border: 1px solid black; */
+    background-color: #faf9e5;
+}
+
+.introduce img {
+    border-radius: 20px;
+}
+
+
+/******* main 이미지 *********/
+.left-top {
+    position: absolute;
+    font-size: 70px;
+    font-family: 'MYHaemalgeunSangsang';
+    top: 150px;
+    left: 220px;
+    /* animation: slide1 2s; */
+}
+
+.left-bottom {
+    position: absolute;
+    top: 270px;
+    left: 50px;
+    width: 540px;
+    height: 720px;
+}
+
+.middle-top {
+    position: absolute;
+    top:  170px;
+    left: 640px;
+    width: 450px;
+    height: 630px;
+}
+
+.middle-bottom {
+    position: absolute;
+    font-size: 80px;
+    font-family: 'MYHaemalgeunSangsang';
+    bottom: -130px;
+    left: 680px;
+}
+
+.right-top {
+    position: absolute;
+    top:  170px;
+    right: 60px;
+    width: 700px;
+    height: 500px;
+}
+
+.right-bottom {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    bottom: -220px;
+    right: 60px;
+}
+
+@keyframes slide1 {
+    from{
+        left:0 ;
+    }
+
+    to {
+        left:220px;
+    }
+}
+
+/**************
+**test-button**
+**************/
+
+.test-button {
+    font-size: 25px;
+    font-family: 'EF_WAKEUP';
+    margin: 60px;
+    padding: 25px 40px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: #F58BF5;
+    transition: all 0.4s;
+}
+
+.test-button:hover {
+    cursor: pointer;
+    background-color: #eb66eb;
+    transform: scale(0.97);
+}
+
